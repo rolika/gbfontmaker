@@ -12,19 +12,6 @@ DEFAULT_FONT = "m5x7.ttf"
 DEFAULT_FONT_COLOR = "black"
 
 
-class Char(pg.sprite.Sprite):
-    def __init__(self, char, fonttype, color, pos):
-        super().__init__()
-        self._char = char
-        self._fonttype = fonttype
-        self._color = color
-        self.rect = self.image.get_rect(topleft=pos)
-
-    @property
-    def image(self):
-        return self._fonttype.render(self._text, self._color)[0]
-
-
 def make_image(font:str=DEFAULT_FONT,
                size:int=FONT_SIZE,
                fontcolor:str=DEFAULT_FONT_COLOR,
